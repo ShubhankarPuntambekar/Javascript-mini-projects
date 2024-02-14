@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todo-list.css">
+    <title>Todo List</title>
+</head>
+<body>
+    <div class="outer-container">
+        <div class="list-container">
+            <h1>To-do Tasks List</h1>
+            <div class="msg">Current List is Empty</div>
+            <ol id="task-list">Current List
+               
+            </ol>
+            
+            <form id="form" action="">
+                <input class="input" id="tasks" autofocus type="text" autocomplete="off">
+                <button class="btn" id="add-task" type="submit">Add Task</button>
+                <input class="input" id="remove-task" type="text" autocomplete="off">
+                <button class="btn" id="remove" type="button">Remove Task</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let btn = document.querySelector("form");
+        let msg = document.querySelector(".msg");
+        
+
+        document.querySelector("#add-task").disabled = true;
+
+        document.querySelector("#tasks").onkeyup = ()=>{
+
+            if(document.querySelector("#tasks").value.length > 0){
+                document.querySelector("#add-task").disabled = false;
+            }
+            else{
+                    document.querySelector("#add-task").disabled = true;
+                }
+        }
+
+        document.querySelector("#remove").disabled = true;
+
+        document.querySelector("#remove-task").onkeyup = ()=>{
+
+            if(document.querySelector("#remove-task").value.length > 0){
+                document.querySelector("#remove").disabled = false;
+            }
+            else{
+                document.querySelector("#remove").disabled = true;
+            }
+        }
+
+        btn.onsubmit = ()=>{
+            
+            let task = document.querySelector("#tasks").value;
+            const li = document.createElement('li');
+            li.innerHTML = task;
+            li.className = "list-item";
+            msg.style.display = "none";
+            document.querySelector("#task-list").appendChild(li); 
+            document.querySelector("#tasks").value = ""; 
+            document.querySelector("#add-task").disabled = true;
+            return false;
+        }
+
+        
+        remove.onclick = ()=>{
+            let parenNode = document.querySelector("#task-list");
+            let clearTask = document.querySelector("#remove-task").value;
+            let list = document.querySelectorAll(".list-item");
+            let myArray = Array.from(list);
+            let items = myArray.length;
+            for(let i=0;i<myArray.length;i++){
+                
+                if(clearTask === myArray[i].textContent){
+                    parenNode.removeChild(myArray[i]);
+                    items--;
+                }
+
+            }
+            if(items < 1)
+            {
+                msg.style.display = "block";
+            }
+            
+            document.querySelector("#remove-task").value = "";
+            document.querySelector("#remove").disabled = true;
+        }
+           
+    </script>
+</body>
+</html>
