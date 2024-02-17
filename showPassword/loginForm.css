@@ -1,0 +1,93 @@
+.loginContent{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width:65%;
+    height:500px;
+    background-color: #f3f5f3;
+    margin:1rem auto;
+    padding:1rem 0.5rem;
+
+}
+.loginHeader{
+    margin:1rem;
+    padding:0.5rem;
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.loginForm{
+    width:55%;
+    padding:0.5rem 0.5rem;
+    margin:1rem auto;
+    background-color: #ffffff;
+    border-radius:5px;
+}
+
+.lrow{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    margin-top:0.5rem;
+    margin-bottom:0.5rem;
+}
+
+.lrow input[type='email'],
+.lrow input[type='password'],
+.lrow input[type='text']{
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    width: 400px;
+    height:45px;
+    padding: 3px;
+    font-size: 16px;
+    margin-top:5px;
+
+}
+
+.lrow label{
+    text-align: right;
+    width:120px;
+    margin-top:5px;
+    padding-right:20px; 
+    font-size: 1.1rem;
+
+}
+.loginBlank{
+    padding:0;
+    margin-right: 0;
+}
+.lrow a{
+    font-size: 0.8rem;
+}
+.lrow button{
+    margin-top:2rem;
+    margin-bottom: 0;
+    background-color: #0a1706;
+    height:40px;
+    width:85px;
+    color: #fefffe;
+    font-weight:lighter;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    justify-content:center;
+}
+.signUpLink{
+    padding:0.2rem;
+    margin-left:auto;
+    margin-right:auto;
+}
+.loginBtn{
+    margin-left:auto;
+    margin-right:auto;
+}
+.show{
+    margin-left: -20px;
+    padding:1.2rem 0;
+}
+.recover{
+    margin-left:140px;
+    margin-right:auto;
+}
